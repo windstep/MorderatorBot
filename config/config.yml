@@ -1,0 +1,2 @@
+db: "db"
+blocklist_file: "words_to_ban.txt"
