@@ -269,6 +269,7 @@ func loadBlacklistWords(filename string) []string {
 
 	var output []string
 
+	// Построчно сканируем файл
 	scanner := bufio.NewScanner(file)
 	for scanner.Scan() {
 		// Избавимся от лишних пробелов и символов переноса строки, а также от пустых строк.
