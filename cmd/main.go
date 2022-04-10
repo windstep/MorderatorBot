@@ -271,7 +271,11 @@ func loadBlacklistWords(filename string) []string {
 
 	scanner := bufio.NewScanner(file)
 	for scanner.Scan() {
-		output = append(output, scanner.Text())
+		// Избавимся от лишних пробелов и символов переноса строки, а также от пустых строк.
+		word := strings.TrimSpace(scanner.Text())
+		if word != "" {
+			output = append(output, word)
+		}
 	}
 
 	return output
